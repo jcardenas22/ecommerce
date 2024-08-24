@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  /*variables de estilos*/
+
+  --clr-main: #4b33a8;
+  --clr-main-ligth: #785ce9;
+  --clr-white: #ececec;
+  --clr-gray: #e2e2e2;
+  --clr-red: #961818;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /**/
+  font-family: "Rubik", sans-serif;
+}
+
+/* estilos a las etiquetas de titulos y subtitulos*/
+h1,
+h2,
+h3,
+h4,
+h5.h6,
+p,
+a,
+input,
+textarea,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*estilo contendor principal*/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: var(--clr-main);
+}
+
+aside {
+  padding: 3rem;
+  padding-right: 0;
+  color: var(--clr-white);
+  position: sticky; /* tiene una posicion encima de todo, y baja hasta cierto punto  */
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /*le da una direccion al flex, tipo columna o fila y la fila va de iquierda a derecha */
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 600; /*negrilla*/
+  font-size: 1.3rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /*espaciado entre las columbas del ul */
+}
+
+.boton-menu {
+  background-color: transparent;
+  border: 0;
+  color: var(--clr-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.boton-menu .active {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  position: relative;
+}
+
+.boton-menu .active::before {
+  /*lo que hace antes de activarlo */
+  content: 0;
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  bottom: 100%;
+  right: 0;
+  background-color: transparent;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0 1rem 0 var(--clr-white);
+}
+
+.boton-menu .active::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  top: 100%;
+  right: 0;
+  background-color: transparent;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0 -1rem 0 var(--clr-white);
+}
+
+.boton-menu > i.bi-hand-index-thumb-fill,
+.boton-menu > i.bi-hand-index-thumb {
+  transform: rotateZ(90deg);
+}
+
+.boton-carrito {
+  margin-top: 2rem;
+}
+
+.numerito {
+  background-color: var(--clr-white);
+  color: var(--clr-main);
+  padding: 0.15rem 0.25rem;
+  border-radius: 0.25rem;
+}
